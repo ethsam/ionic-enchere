@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/3rxCzRQTI6IkVpt3gGXQ_folio04.png) no-repeat center;background-size:cover;" id="page4">
+
+  <form id="login-form1">
+    <div>
+      <img src="assets/img/CP9mjOw1Rb6MvJHAtAqw_v5nShzi5.jpg" style="display:block;width:70%;height:auto;margin-left:auto;margin-right:auto;" />
+    </div>
+
+    <ion-list id="login-list2">
+
+      <ion-item id="login-input1">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" id="emaillogin" placeholder=""></ion-input>
+      </ion-item>
+
+      <ion-item id="login-input2">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="password" id="passlog" placeholder=""></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button id="login-button1" ion-button color="positive" block on-click="goToAcheter()">
+      <ion-icon name="log-in"></ion-icon>
+      Connection
+    </button>
+    <button id="login-button2" ion-button icon-only color="assertive" block style="color:#FFFFFF;" on-click="goToInscription()">
+      <ion-icon name="create"></ion-icon>
+      Inscription
+    </button>
+  </form>
+
+  <script>
+  alert('test');
+  var data = $('#emaillogin .text-input').val();
+  $.post( "http://5.189.177.17/cgi-bin/loginAuction.py", data );
+  </script>
+
+</ion-content>
