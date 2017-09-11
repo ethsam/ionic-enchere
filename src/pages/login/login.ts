@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AcheterPage } from '../acheter/acheter';
 import { InscriptionPage } from '../inscription/inscription';
 import * as $ from 'jquery';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'page-login',
@@ -16,8 +17,8 @@ export class LoginPage {
     if (!params) params = {};
     this.navCtrl.push(AcheterPage);
   }
-  goToInscription(params){
-    if (!params) params = {};
+  goToInscription(){
+    // if (!params) params = {};
     this.navCtrl.push(InscriptionPage);
   }
   goToLogin(params){
@@ -25,8 +26,10 @@ export class LoginPage {
     this.navCtrl.push(LoginPage);
   }
 
-  alert(params){
-    alert(params);
+  send(form:NgForm){
+    console.log(form.value.login);
+    var data2 = {login: form.value.login, password: form.value.password}
+    $.post( "http://5.189.177.17/cgi-bin/loginAuction.py", data2 );
   }
 
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AcheterPage } from '../acheter/acheter';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'page-inscription',
@@ -21,4 +22,10 @@ export class InscriptionPage {
     if (!params) params = {};
     this.navCtrl.push(InscriptionPage);
   }
+
+  register(form:NgForm){
+
+
+  }
+
 }
