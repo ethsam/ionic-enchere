@@ -8,6 +8,7 @@ import { CloudPage } from '../pages/cloud/cloud';
 import { LoginPage } from '../pages/login/login';
 import { InscriptionPage } from '../pages/inscription/inscription';
 import { PagePage } from '../pages/page/page';
+import { EnchRePage } from '../pages/ench-re/ench-re';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CloudPage,
     LoginPage,
     InscriptionPage,
-    PagePage
+    PagePage,
+    EnchRePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CloudPage,
     LoginPage,
     InscriptionPage,
-    PagePage
+    PagePage,
+    EnchRePage
   ],
   providers: [
     StatusBar,

@@ -8,7 +8,6 @@ import { AcheterDesBCOINSPage } from '../pages/acheter-des-bcoins/acheter-des-bc
 import { InscriptionPage } from '../pages/inscription/inscription';
 import { PagePage } from '../pages/page/page';
 
-
 import { LoginPage } from '../pages/login/login';
 
 
