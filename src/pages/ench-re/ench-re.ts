@@ -12,6 +12,5 @@ export class EnchRePage {
   constructor(public navCtrl: NavController) {
   }
 
-  
 
 }
