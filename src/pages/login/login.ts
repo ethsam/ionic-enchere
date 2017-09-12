@@ -8,6 +8,8 @@ import { PagePage } from '../page/page';
 import * as $ from 'jquery';
 import {NgForm} from '@angular/forms';
 
+var data_login : any;
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -16,6 +18,8 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController) {
   }
+
+
   goToAcheter(params){
     if (!params) params = {};
     this.navCtrl.push(AcheterPage);
@@ -36,7 +40,7 @@ export class LoginPage {
   // }
 
   send(form:NgForm){
-    console.log(form.value.login);
+
     var data2 = {login: form.value.login, password: form.value.password}
     // $.post( "http://localhost:8888/serverapp/login.php", data2 );
 
@@ -45,10 +49,15 @@ export class LoginPage {
              type : 'POST', // Le type de la requête HTTP.
              data : data2,
              success: function( data ) {
-                $('#test').replaceWith($('#test').html(data));}
-                    });
+                // $(#data_login).replaceWith($('#test').html(data))
+                // alert(data);
+                // data_login = data;
+                data_login = "test";
+                }
+              });
+              console.log(data_login);
 
-    // this.navCtrl.push(PagePage);
+    this.navCtrl.push(PagePage, data_login);
   }
 
 
