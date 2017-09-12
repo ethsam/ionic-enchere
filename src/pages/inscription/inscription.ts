@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AcheterPage } from '../acheter/acheter';
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 import {NgForm} from '@angular/forms';
 import firebase from 'firebase';
 
@@ -30,8 +30,12 @@ export class InscriptionPage {
   //   $.post('http://localhost:8888/serverapp/register.php', $data);
   // this.navCtrl.push(LoginPage);
   firebase.auth().createUserWithEmailAndPassword(form.value.email,form.value.password)
-  .then(data => console.log(data))
-  .catch(error => console.log(error));
+  .then(data => {
+    this.navCtrl.push(LoginPage);
+
+  })
+  .catch(error => alert('Error!'));
+
   }
 
 }

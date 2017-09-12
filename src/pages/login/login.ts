@@ -7,6 +7,7 @@ import { PagePage } from '../page/page';
 
 // import * as $ from 'jquery';
 import {NgForm} from '@angular/forms';
+import firebase from 'firebase';
 
 var data_login : any;
 
@@ -56,8 +57,16 @@ export class LoginPage {
     //             }
     //           });
     //           console.log(data_login);
+    firebase.auth().signInWithEmailAndPassword(form.value.login,form.value.password)
+    .then(data => {
+      this.navCtrl.setRoot(PagePage, data);
 
-    this.navCtrl.push(PagePage, data_login);
+    })
+
+    .catch(error => {
+      alert('Error !!!');
+    });
+
   }
 
 
