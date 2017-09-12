@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AcheterPage } from '../acheter/acheter';
 import { InscriptionPage } from '../inscription/inscription';
+
+import { PagePage } from '../page/page';
+
 import * as $ from 'jquery';
 import {NgForm} from '@angular/forms';
 
@@ -26,10 +29,26 @@ export class LoginPage {
     this.navCtrl.push(LoginPage);
   }
 
+  // send(form:NgForm){
+  //   console.log(form.value.login);
+  //   var data2 = {login: form.value.login, password: form.value.password}
+  //   $.post( "http://5.189.177.17/cgi-bin/loginAuction.py", data2 );
+  // }
+
   send(form:NgForm){
     console.log(form.value.login);
     var data2 = {login: form.value.login, password: form.value.password}
-    $.post( "http://5.189.177.17/cgi-bin/loginAuction.py", data2 );
+    // $.post( "http://localhost:8888/serverapp/login.php", data2 );
+
+    $.ajax({
+             url : 'http://localhost:8888/serverapp/login.php', // La ressource ciblée
+             type : 'POST', // Le type de la requête HTTP.
+             data : data2,
+             success: function( data ) {
+                $('#test').replaceWith($('#test').html(data));}
+                    });
+
+    // this.navCtrl.push(PagePage);
   }
 
 

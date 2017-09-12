@@ -26,7 +26,7 @@ export class InscriptionPage {
 
   register(form:NgForm){
     var $data = { email: form.value.email, nom: form.value.nom, password: form.value.password }
-    $.post('http://localhost:8888/serverapp/index.php', $data);
+    $.post('http://localhost:8888/serverapp/register.php', $data);
   this.navCtrl.push(LoginPage);
   }
 
