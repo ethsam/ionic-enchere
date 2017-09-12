@@ -9,7 +9,7 @@ import { PagePage } from '../page/page';
 import {NgForm} from '@angular/forms';
 import firebase from 'firebase';
 
-// var data_login : any;
+// var data_login : any; //attention plantage du server /!\
 
 @Component({
   selector: 'page-login',
