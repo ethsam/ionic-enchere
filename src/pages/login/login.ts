@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AcheterPage } from '../acheter/acheter';
 import { InscriptionPage } from '../inscription/inscription';
 
-import { PagePage } from '../page/page';
+// import { PagePage } from '../page/page';
 
 // import * as $ from 'jquery';
 import {NgForm} from '@angular/forms';
@@ -59,7 +59,7 @@ export class LoginPage {
     //           console.log(data_login);
     firebase.auth().signInWithEmailAndPassword(form.value.login,form.value.password)
     .then(data => {
-      this.navCtrl.setRoot(PagePage, data);
+      this.navCtrl.setRoot(AcheterPage, data);
 
     })
 

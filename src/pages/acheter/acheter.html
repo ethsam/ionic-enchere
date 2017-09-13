@@ -15,36 +15,41 @@
   <form id="acheter-form3">
     <ion-searchbar placeholder="iphone 16GO rouge" name="" id="acheter-search1"></ion-searchbar>
   </form>
-  <ion-list id="acheter-list8" on-click="gotoenchere()">
-    <ion-item color="none" id="acheter-list-item7">
-      <ion-thumbnail item-left>
-        <img />
-      </ion-thumbnail>
-      <h2>
-        ipad 16 GB
-      </h2>
-    </ion-item>
-  </ion-list>
-  <div class="spacer" style="width:300px;height:7px;" id="acheter-spacer3"></div>
-  <ion-list id="acheter-list9">
-    <ion-item color="none" id="acheter-list-item8">
-      <ion-thumbnail item-left>
-        <img />
-      </ion-thumbnail>
-      <h2>
-        Item
-      </h2>
-    </ion-item>
-  </ion-list>
-  <div class="spacer" style="width:300px;height:7px;" id="acheter-spacer4"></div>
-  <ion-list id="acheter-list10">
-    <ion-item color="none" id="acheter-list-item9">
-      <ion-thumbnail item-left>
-        <img />
-      </ion-thumbnail>
-      <h2>
-        Item
-      </h2>
-    </ion-item>
-  </ion-list>
+
+  <ion-card>
+
+    <img src="https://ionicframework.com/dist/preview-app/www/assets/img/nin-live.png"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        Nine Inch Nails Live
+      </ion-card-title>
+      <p>
+        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='star'></ion-icon>
+          Favorite
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='musical-notes'></ion-icon>
+          Listen
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" icon-start>
+          <ion-icon name='share-alt'></ion-icon>
+          Share
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
 </ion-content>
