@@ -9,7 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { InscriptionPage } from '../pages/inscription/inscription';
 import { PagePage } from '../pages/page/page';
 import { EnchRePage } from '../pages/ench-re/ench-re';
-
+import { EnchereService } from '../services/encheres';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -43,6 +43,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    EnchereService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
