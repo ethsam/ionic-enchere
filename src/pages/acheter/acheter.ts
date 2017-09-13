@@ -14,6 +14,7 @@ export class AcheterPage {
   constructor(public navCtrl: NavController) {
   }
 
+
   gotoenchere(params){
     if (!params) params = {};
     this.navCtrl.push(EnchRePage);
@@ -21,7 +22,7 @@ export class AcheterPage {
 
   importEnchere() {
 
-    var connection = new autobahn.Connection({url: 'ws://127.0.0.1:9000/', realm: 'realm1'});
+    var connection = new autobahn.Connection({url: 'ws://5.189.177.17:8182/ws', realm: 'auction_controller'});
 
 connection.onopen = function (session) {
 
@@ -29,7 +30,14 @@ connection.onopen = function (session) {
    function onevent(args) {
       console.log("Event:", args[0]);
    }
-   session.subscribe('com.myapp.hello', onevent);
+   session.subscribe('info.auction', onevent).then(
+     function(sub) {
+       console.log("connection lé doss");
+     },
+     function (error) {
+       console.log("merde : ",error);
+     }
+   );
 
    // 2) publish an event
    session.publish('com.myapp.hello', ['Hello, world!']);
@@ -52,6 +60,12 @@ connection.open();
 
   }
 
-  
+  ionViewDidEnter(){
+    this.importEnchere();
+
+    
+  }
+
+
 
 }
