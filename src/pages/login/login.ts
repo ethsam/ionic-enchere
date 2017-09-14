@@ -46,14 +46,15 @@ export class LoginPage {
     // // $.post( "http://localhost:8888/serverapp/login.php", data2 );
     //
     // $.ajax({
-    //          url : 'http://localhost:8888/serverapp/login.php', // La ressource ciblée
+    //          url : 'http://5.189.177.17/cgi-bin/loginAuction.py', // La ressource ciblée
     //          type : 'POST', // Le type de la requête HTTP.
     //          data : data2,
     //          success: function( data ) {
     //             // $(#data_login).replaceWith($('#test').html(data))
     //             // alert(data);
     //             // data_login = data;
-    //             data_login = "test";
+    //             console.log(data);
+    //             // data_login = "test";
     //             }
     //           });
     //           console.log(data_login);

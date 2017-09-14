@@ -26,6 +26,13 @@ export class MyApp {
     firebase.initializeApp({
       apiKey: "AIzaSyArlA0vet2mYSeuILlg4fOafHTTnClvCms",
       authDomain: "enchere-b0f8b.firebaseapp.com"
+
+      // apiKey: "AIzaSyCj91q7R_0mceKQ8nx7R6oeSnsGighAzoI",
+      // authDomain: "mahana-de8f1.firebaseapp.com"
+
+      // apiKey: "AIzaSyCj91q7R_0mceKQ8nx7R6oeSnsGighAzoI",
+      //       authDomain: "mahana-de8f1.firebaseapp.com",
+
     });
 
     platform.ready().then(() => {
