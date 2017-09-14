@@ -36,6 +36,8 @@ export class AcheterPage {
                   obj = JSON.parse(json);
 
                   //gestion prix
+                  
+
                   if (obj.id == "auction001") {
                     var caca = "test id = " + obj.id + " " + obj.status;
                     $('#price_1').html(obj.price+' €');
@@ -64,7 +66,7 @@ export class AcheterPage {
 
                   //gestion status
 
-                  
+
                   if (obj.id == "auction001") {
                     $('#Status_1').html(obj.status);
                   }
