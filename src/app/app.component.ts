@@ -10,6 +10,8 @@ import { PagePage } from '../pages/page/page';
 
 import { LoginPage } from '../pages/login/login';
 
+import firebase from 'firebase';
+
 
 
 @Component({
@@ -20,6 +22,12 @@ export class MyApp {
     rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+
+    firebase.initializeApp({
+      apiKey: "AIzaSyArlA0vet2mYSeuILlg4fOafHTTnClvCms",
+      authDomain: "enchere-b0f8b.firebaseapp.com"
+    });
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

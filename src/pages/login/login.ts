@@ -5,10 +5,11 @@ import { InscriptionPage } from '../inscription/inscription';
 
 import { PagePage } from '../page/page';
 
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 import {NgForm} from '@angular/forms';
+import firebase from 'firebase';
 
-var data_login : any;
+// var data_login : any; //attention plantage du server /!\
 
 @Component({
   selector: 'page-login',
@@ -41,23 +42,31 @@ export class LoginPage {
 
   send(form:NgForm){
 
-    var data2 = {login: form.value.login, password: form.value.password}
-    // $.post( "http://localhost:8888/serverapp/login.php", data2 );
+    // var data2 = {login: form.value.login, password: form.value.password}
+    // // $.post( "http://localhost:8888/serverapp/login.php", data2 );
+    //
+    // $.ajax({
+    //          url : 'http://localhost:8888/serverapp/login.php', // La ressource ciblée
+    //          type : 'POST', // Le type de la requête HTTP.
+    //          data : data2,
+    //          success: function( data ) {
+    //             // $(#data_login).replaceWith($('#test').html(data))
+    //             // alert(data);
+    //             // data_login = data;
+    //             data_login = "test";
+    //             }
+    //           });
+    //           console.log(data_login);
+    firebase.auth().signInWithEmailAndPassword(form.value.login,form.value.password)
+    .then(data => {
+      this.navCtrl.setRoot(PagePage, data);
 
-    $.ajax({
-             url : 'http://localhost:8888/serverapp/login.php', // La ressource ciblée
-             type : 'POST', // Le type de la requête HTTP.
-             data : data2,
-             success: function( data ) {
-                // $(#data_login).replaceWith($('#test').html(data))
-                // alert(data);
-                // data_login = data;
-                data_login = "test";
-                }
-              });
-              console.log(data_login);
+    })
 
-    this.navCtrl.push(PagePage, data_login);
+    .catch(error => {
+      alert('Error !!!');
+    });
+
   }
 
 
